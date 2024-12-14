@@ -1,18 +1,18 @@
-#Smart-Transportation-Big-Data-Monitoring-Platform
+# **Smart-Transportation-Big-Data-Monitoring-Platform
 
-##How to start
+## **How to start
 Run the following command to install the dependency
     *pip install -r requirements.txt*
 Run the file *'admin.py'* to start the project
 Click the link below to open the website:
     *http://127.0.0.1:5000/*
 
-##ACCOUNTS
+## **ACCOUNTS
 user：admin  password: 123456
 admin：admins   password: admins
 
 
-##INTRODUCTION
+## **INTRODUCTION
 From a functional architecture perspective, the Traffic Big Data Monitoring System comprises three core modules: a real-time data monitoring dashboard, map visualization, and vehicle analysis and statistics.
 
 ### **Real-Time Data Monitoring Dashboard**
@@ -36,6 +36,6 @@ Key features include real-time monitoring, multi-dimensional analysis, intellige
 ### **Value Proposition**
 As a comprehensive traffic monitoring platform, this system offers decision-making support for traffic management departments, assists in optimizing traffic strategies, enhances the efficiency of detecting traffic violations, and facilitates intelligent analysis and visualization of traffic data. It is a vital tool for improving urban traffic management and elevating overall traffic governance levels.
 
-##OUTCOME
+## **OUTCOME
 !static/outcome1.png
 !static/outcome2.png
