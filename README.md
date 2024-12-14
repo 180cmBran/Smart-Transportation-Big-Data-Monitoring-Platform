@@ -1,14 +1,14 @@
-# **Smart-Transportation-Big-Data-Monitoring-Platform
+# Smart-Transportation-Big-Data-Monitoring-Platform
 
-## **How to start
-Run the following command to install the dependency
-    *pip install -r requirements.txt*
-Run the file *'admin.py'* to start the project
-Click the link below to open the website:
-    *http://127.0.0.1:5000/*
+## How to start
+Run the following command to install the dependency    
+   pip install -r requirements.txt   
+Run the file 'admin.py' to start the project  
+Click the link below to open the website:  
+   http://127.0.0.1:5000/
 
-## **ACCOUNTS
-user：admin  password: 123456
+## ACCOUNTS
+user：admin  password: 123456  
 admin：admins   password: admins
 
 
