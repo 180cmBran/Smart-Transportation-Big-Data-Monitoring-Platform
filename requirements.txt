@@ -15,4 +15,5 @@ flask-ckeditor
 sqlalchemy==1.4.46
 flask-sqlalchemy
 pyecharts
-
+bleach
+pytz
