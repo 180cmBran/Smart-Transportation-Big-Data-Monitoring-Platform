@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details-Complex</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/tail.css">
+</head>
+<body class="body1">
+<!--Top-->
+<header class="header left">
+    <div class="left nav">
+        <ul>
+            <li ><i class="nav_1"></i><a href="/index">Data Overview</a> </li>
+            <li><i class="nav_3"></i><a href="/map">Map View</a> </li>
+            <li><i class="nav_7"></i><a href="/static1">Query Statistics</a> </li>
+        </ul>
+    </div>
+    <div class="right nav text_right">
+        <ul>
+            <li class="nav_active"><i class="nav_8"></i><a href="/message">Information Entry</a> </li>
+            <li><i class="nav_4"></i><a href="/table1">Table View</a> </li>
+            <li><i class="nav_4"></i><a href="/admin">Backend Management</a> </li>
+            <li class="nav_active"><i class="nav_4"></i><a href="/loginsout">Logout</a> </li>
+        </ul>
+    </div>
+</header>
+<section class="sm_section left">
+    <form action="/message" method="post" enctype="multipart/form-data">
+        <fieldset class="message_fieldset">
+            <legend>Basic Information</legend>
+            <div class="message_con"><label>Monitoring and Reporting Information Entry:</label><input name="title" type="text" class="message_input"><span class="must">*</span>
+            <p>Can enter any characters, but length must be between 1 and 200!</p>
+            </div>
+            <div class="message_con"><label>Violation Type:</label><select class="message_select" name="type">
+                <option value="闯红灯">Red Light Running</option>
+                <option value="超速">Speeding</option>
+                <option value="车窗抛物">Littering from Vehicle</option>
+                <option value="其他类型">Other Types</option>
+                </select><span class="must">*</span>
+                <p>Can enter any characters, but length must be between 1 and 200!</p>
+            </div>
+            <div class="message_con"><label>Need Review:</label><input type="radio" name="ref" value="需要审核" checked><span class="font_color">Yes</span><input type="radio" name="ref" value="不需要审核" ><span class="font_color">No</span>
+            </div>
+            <div class="message_con inputfile_div"><label>Attachment Upload:</label><input type="file" name="file" class="message_input input_file"><span class="must">*</span>
+                <div><input type="text"><button>Choose File</button></div>
+                <p>Can upload videos and images</p>
+            </div>
+        </fieldset>
+        <fieldset class="message_fieldset">
+            <legend>Detailed Information</legend>
+            <div class="message_con"><label>Details:</label>
+                <textarea id="editor" name="content" ></textarea>
+            </div>
+        </fieldset>
+        <br/>
+        <div class="message_footer"><button type="submit" class="bule">Save</button><button class="orgen">Cancel</button></div>
+    </form>
+</section>
+<script src="/static/js/jquery/jQuery-2.2.0.min.js"></script>
+<script src="/static/js/utf8-php/ueditor.config.js"></script>
+<script src="/static/js/utf8-php/ueditor.all.min.js"></script>
+<script src="/static/js/base.js"></script>
+<script>
+    var ue = UE.getEditor('editor');
+    function isFocus(e){
+        alert(UE.getEditor('editor').isFocus());
+        UE.dom.domUtils.preventDefault(e)
+    }
+    function setblur(e){
+        UE.getEditor('editor').blur();
+        UE.dom.domUtils.preventDefault(e)
+    }
+    function insertHtml() {
+        var value = prompt('Enter HTML content', '');
+        UE.getEditor('editor').execCommand('insertHtml', value)
+    }
+    function createEditor() {
+        enableBtn();
+        UE.getEditor('editor');
+    }
+    function getAllHtml() {
+        alert(UE.getEditor('editor').getAllHtml())
+    }
+    function getContent() {
+        var arr = [];
+        arr.push("");
+        arr.push("");
+        arr.push(UE.getEditor('editor').getContent());
+        alert(arr.join("\n"));
+    }
+    function getPlainTxt() {
+        var arr = [];
+        arr.push("");
+        arr.push("");
+        arr.push(UE.getEditor('editor').getPlainTxt());
+        alert(arr.join('\n'))
+    }
+    function setContent(isAppendTo) {
+        var arr = [];
+        arr.push("");
+        UE.getEditor('editor').setContent('Testing ueditor', isAppendTo);
+        alert(arr.join("\n"));
+    }
+    function setDisabled() {
+        UE.getEditor('editor').setDisabled('fullscreen');
+        disableBtn("enable");
+    }
+    function setEnabled() {
+        UE.getEditor('editor').setEnabled();
+        enableBtn();
+    }
+    function getText() {
+        var range = UE.getEditor('editor').selection.getRange();
+        range.select();
+        var txt = UE.getEditor('editor').selection.getText();
+        alert(txt)
+    }
+    function getContentTxt() {
+        var arr = [];
+        arr.push("");
+        arr.push("");
+        arr.push(UE.getEditor('editor').getContentTxt());
+        alert(arr.join("\n"));
+    }
+    function hasContent() {
+        var arr = [];
+        arr.push("");
+        arr.push("");
+        arr.push(UE.getEditor('editor').hasContents());
+        alert(arr.join("\n"));
+    }
+    function setFocus() {
+        UE.getEditor('editor').focus();
+    }
+    function deleteEditor() {
+        disableBtn();
+        UE.getEditor('editor').destroy();
+    }
+    function disableBtn(str) {
+        var div = document.getElementById('btns');
+        var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+        for (var i = 0, btn; btn = btns[i++];) {
+            if (btn.id == str) {
+                UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+            } else {
+                btn.setAttribute("disabled", "true");
+            }
+        }
+    }
+    function enableBtn() {
+        var div = document.getElementById('btns');
+        var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+        for (var i = 0, btn; btn = btns[i++];) {
+            UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+        }
+    }
+    function getLocalData () {
+        alert(UE.getEditor('editor').execCommand( "getlocaldata" ));
+    }
+    function clearLocalData () {
+        UE.getEditor('editor').execCommand( "clearlocaldata" );
+        alert("Cleared")
+    }
+</script>
+</body>
+</html>

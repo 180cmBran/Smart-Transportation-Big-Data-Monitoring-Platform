@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map View</title>
+    <link rel="stylesheet" href="/static/js/bstable/css/bootstrap.min.css">
+    <link href="/static/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/static/js/jQueryPage/src/jquery.page.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+</head>
+<body>
+<!--Top-->
+<header class="header left">
+    <div class="left nav">
+            <ul>
+                <li class="nav_1"><i class="nav_1"></i><a href="/index">Data Overview</a> </li>
+                <li><i class="nav_active"></i><a href="/map">Map View</a> </li>
+            </ul>
+        </div>
+    <!--<div class="header_center left">
+        <h2><strong>Big Data Traffic Visualization Platform</strong></h2>
+    </div>-->
+    <div class="right nav text_right">
+        <ul> <li><i class="nav_7"></i><a href="/static1">Query Statistics</a> </li>
+            <li><i class="nav_8"></i><a href="/message">Information Entry</a> </li>
+            <li><i class="nav_4"></i><a href="/table1">Table View</a> </li>
+        </ul>
+    </div>
+</header>
+<!--Content-->
+<div class="map_con left" id="car_control">
+    <!--Left Map-->
+  <div class="left map_left" style="position:relative;"  >
+      <div  class="map_box" id="map_box"></div>
+      <div class="map_top">
+          <ul>
+              <li class="active"><i class="glyphicon glyphicon-pencil"></i><a href="javascript:void (0)" class="active">Layer Selection</a> </li>
+              <li><i class="glyphicon glyphicon-zoom-in"></i><a href="javascript:void (0)">Zoom In</a> </li>
+              <li><i class="glyphicon glyphicon-zoom-out"></i><a href="javascript:void (0)">Zoom Out</a> </li>
+              <li><i class="glyphicon glyphicon-screenshot"></i><a href="javascript:void (0)">Compare</a> </li>
+              <li><i class="glyphicon glyphicon-search"></i><a href="javascript:void (0)">Search</a> </li>
+              <li><i class="glyphicon glyphicon-wrench"></i><a href="javascript:void (0)">Tools</a> </li>
+              <li><i class="glyphicon glyphicon-fullscreen"></i><a href="javascript:void (0)">Full Screen</a> </li>
+          </ul>
+      </div>
+      <div class="map_select">
+          <p><input type="checkbox"><span>Personnel</span></p>
+          <p><input type="checkbox"><span>Vehicles</span></p>
+          <p><input type="checkbox"><span>Buildings</span></p>
+          <p><input type="checkbox"><span>Cameras</span></p>
+      </div>
+  </div>
+
+    <!--Right Function Bar-->
+    <div class="right map_right ">
+        <div class="map_right_top">
+            <ul><li class="li_active">Big Data Information</li>
+                <li>Search Recommendations</li>
+                <li>Navigation Query</li></ul>
+        </div>
+        <div class="map_con">
+            <div class="map_con_div" style="display: block" >
+                <div class="map_chart">
+                    <p id="char1" class="p_chart"></p>
+                </div>
+                <div class="div_any_child">
+                    <div class="div_any_title"><img src="/static/img/title_4.png">Tourist Spot Congestion Ranking</div>
+                    <div class="table_p">
+                        <table>
+                            <thead><tr>
+                                <th>Rank</th>
+                                <th>Tourist Spot</th>
+                                <th>Est. Congestion Time (min)</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr><td>1</td><td>Fantasy Park</td><td>30</td></tr>
+                            <tr><td>2</td><td>Jiuzi Ancient Town</td><td>25</td></tr>
+                            <tr><td>3</td><td>Spirit Mountain Park</td><td>24</td></tr>
+                            <tr><td>4</td><td>Mirror Lake Park</td><td>21</td></tr>
+                            <tr><td>5</td><td>Dapu Rural Resort</td><td>19</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="map_con_div" >
+                <p>
+                    <input type="text" placeholder="Enter keywords" class="carNo_input"><input type="button" class="find_but">
+                </p>
+                <div class="map_work">
+                    <ul>
+                        <li>
+                            <div class="/static/img_div img_div01"></div>
+                            <div class="/static/img_div_text">Route Planning</div>
+                        </li>
+                        <li>
+                            <div class="/static/img_div img_div02"></div>
+                            <div class="/static/img_div_text">Congestion Query</div>
+                        </li>
+                        <li>
+                            <div class="/static/img_div img_div01"></div>
+                            <div class="/static/img_div_text">Nearby Services</div>
+                        </li>
+                        <li>
+                            <div class="/static/img_div img_div01"></div>
+                            <div class="/static/img_div_text">Tourist Attractions</div>
+                        </li>
+                        <li>
+                            <div class="/static/img_div img_div01"></div>
+                            <div class="/static/img_div_text">Popular Food</div>
+                        </li>
+                        <li>
+                            <div class="/static/img_div img_div01"></div>
+                            <div class="/static/img_div_text">Entertainment</div>
+                        </li>
+                    </ul>
+                    <div class="map_resList">
+                        <p class="set_list"><i class="list_i"></i> Search Results:<span class="right"><i class="glyphicon glyphicon-backward back_i"></i><a href="javascript:void(0)" onclick="back()">Back</a></span></p>
+                        <ul>
+                            <li><p><strong>Art Gallery</strong><span class="right"><a href="javascript:void(0)" title="Video"><img src="/static/img/nav_5.png"> </a><a href="javascript:void(0)" title="Location"><img src="/static/img/find01.png"> </a> </span></p>
+                            <p>Address 1</p></li>
+                            <li><p><strong>RT-Mart Shopping</strong><span class="right"><a href="javascript:void(0)" title="Video"><img src="/static/img/nav_5.png"> </a><a href="javascript:void(0)" title="Location"><img src="/static/img/find01.png"> </a> </span></p>
+                                <p>Address 2</p></li>
+                            <li><p><strong>Yueda Plaza Food Street</strong><span class="right"><a href="javascript:void(0)" title="Video"><img src="/static/img/nav_5.png"> </a><a href="javascript:void(0)" title="Location"><img src="/static/img/find01.png"> </a> </span></p>
+                                <p>Address 3</p></li>
+                            <li><p><strong>RT-Mart</strong><span class="right"><a href="javascript:void(0)" title="Video"><img src="/static/img/nav_5.png"> </a><a href="javascript:void(0)" title="Location"><img src="/static/img/find01.png"> </a> </span></p>
+                                <p>Address 4</p></li>
+                            <li><p><strong>Pedestrian Street</strong><span class="right"><a href="javascript:void(0)" title="Video"><img src="/static/img/nav_5.png"> </a><a href="javascript:void(0)" title="Location"><img src="/static/img/find01.png"> </a> </span></p>
+                                <p>Address 5</p></li>
+                        </ul>
+                        <div id="page"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="map_con_div">
+                <div class=" bow_shadow">
+                    <p>
+                        <input type="text" placeholder="Enter keywords" class="carNo_input"><input type="button" class="find_but">
+                    </p>
+                    <p class="set_list"><i class="list_i"></i> Topic List:</p>
+                    <p ><ul id="treeDemo" class="ztree"></ul></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/static/js/jquery/jQuery-2.2.0.min.js"></script>
+<script src="/static/js/base.js"></script>
+<script src="/static/js/echarts-all.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=5ieMMexWmzB9jivTq6oCRX9j&callback"></script>
+<script src="/static/js/jQueryPage/src/jquery.page.js"></script>
+<script src="/static/js/map_control.js"></script>
+<script src="/static/js/ztree/jquery.ztree.all-3.5.js"></script>
+<script src="/static/js/listTree.js"></script>
+</body>
+</html>

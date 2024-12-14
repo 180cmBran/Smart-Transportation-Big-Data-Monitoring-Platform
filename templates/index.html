@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+</head>
+<body>
+    <!--Top-->
+    <header class="header left">
+        <div class="left nav">
+            <ul>
+                <li class="nav_active"><i class="nav_1"></i><a href="/index">Data Overview</a> </li>
+                <li><i class="nav_3"></i><a href="/map">Map View</a> </li>
+                <li><i class="nav_7"></i><a href="/static1">Query Statistics</a> </li>
+            </ul>
+        </div>
+        <div class="header_center left">
+            <!--<h2><strong>Big Data Traffic Visualization Platform</strong></h2>-->
+        </div>
+        <div class="right nav text_right">
+            <ul>
+                <li><i class="nav_8"></i><a href="/message">Information Entry</a> </li>
+                <li><i class="nav_4"></i><a href="/table1">Table View</a> </li>
+                <li><i class="nav_4"></i><a href="/admin">Backend Management</a> </li>
+                <li class="nav_active"><i class="nav_4"></i><a href="/loginsout">Logout</a> </li>
+            </ul>
+        </div>
+    </header>
+    <!--Content Section-->
+    <div class="con left">
+        <!--Data Overview-->
+        <div class="con_div">
+            <div class="con_div_text left">
+                <div class="con_div_text01 left">
+                    <img src="/static/img/info_1.png" class="left text01_img">
+                    <div class="left text01_div">
+                        <p>Yonghe Road Vehicles (Units)</p>
+                        <p>45452</p>
+                    </div>
+                </div>
+                <div class="con_div_text01 right">
+                    <img src="/static/img/info_2.png" class="left text01_img">
+                    <div class="left text01_div">
+                        <p>Speeding Vehicles (Units)</p>
+                        <p>16</p>
+                    </div>
+                </div>
+            </div>
+            <div class="con_div_text left">
+                <div class="con_div_text01 left">
+                    <img src="/static/img/info_4.png" class="left text01_img">
+                    <div class="left text01_div">
+                        <p>Peace Avenue Vehicles (Units)</p>
+                        <p class="sky">45452</p>
+                    </div>
+                </div>
+                <div class="con_div_text01 right">
+                    <img src="/static/img/info_5.png" class="left text01_img">
+                    <div class="left text01_div">
+                        <p>Red Light Violations (Units)</p>
+                        <p class="sky">12</p>
+                    </div>
+                </div>
+            </div>
+            <div class="con_div_text left">
+                <div class="con_div_text01 left">
+                    <img src="/static/img/info_6.png" class="left text01_img">
+                    <div class="left text01_div">
+                        <p>Citywide Vehicles (Units)</p>
+                        <p class="org">747681</p>
+                    </div>
+                </div>
+                <div class="con_div_text01 right">
+                    <img src="/static/img/info_7.png" class="left text01_img">
+                    <div class="left text01_div">
+                        <p>Daily Average Violations (Units)</p>
+                        <p class="org">52</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Statistical Analysis Charts-->
+        <div class="div_any">
+            <div class="left div_any01">
+                <div class="div_any_child">
+                    <div class="div_any_title"><img src="/static/img/title_1.png">Vehicle Type Statistics</div>
+                    <p id="char1" class="p_chart"></p>
+                </div>
+                <div class="div_any_child">
+                    <div class="div_any_title"><img src="/static/img/title_2.png">Vehicle Status Statistics</div>
+                    <p id="char2" class="p_chart"></p>
+                </div>
+            </div>
+            <div class="div_any02 left ">
+                <div class="div_any_child_index div_height">
+                    <div class="div_any_title any_title_width"><img src="/static/img/title_3.png">Vehicle Travel Map</div>
+                    <div id="map_div"></div>
+                </div>
+            </div>
+            <div class="right div_any01">
+                <div class="div_any_child">
+                    <div class="div_any_title"><img src="/static/img/title_4.png">Congestion Monitoring</div>
+                    <p id="char3" class="p_chart"></p>
+                </div>
+                <div class="div_any_child">
+                    <div class="div_any_title"></div>
+                    <p id="char4" class="p_chart"></p>
+                </div>
+            </div>
+        </div>
+        <!--Analysis Tables-->
+        <div class="div_table">
+            <div class="left div_table_box">
+                <div class="div_any_child">
+                    <div class="div_any_title"><img src="/static/img/title_4.png">Intersection Congestion Status</div>
+                    <div class="table_p">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Congestion Rank</th>
+                                    <th>Intersection</th>
+                                    <th>Est. Congestion Time (min)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>Yonghe Road</td><td>44</td></tr>
+                                <tr><td>2</td><td>Nanhu Road</td><td>43</td></tr>
+                                <tr><td>3</td><td>Wangxi Road</td><td>35</td></tr>
+                                <tr><td>4</td><td>Fifth Avenue</td><td>32</td></tr>
+                                <tr><td>5</td><td>Sunshine Avenue</td><td>28</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="left div_table_box">
+                <div class="div_any_child">
+                    <div class="div_any_title"><img src="/static/img/title_4.png">Intersection Traffic Flow Statistics</div>
+                    <div class="table_p">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Intersection</th>
+                                    <th>Total Traffic Flow (Units)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>Yonghe Road</td><td>65434</td></tr>
+                                <tr><td>2</td><td>Nanhu Road</td><td>56793</td></tr>
+                                <tr><td>3</td><td>Wangxi Road</td><td>55433</td></tr>
+                                <tr><td>4</td><td>Fifth Avenue</td><td>24579</td></tr>
+                                <tr><td>5</td><td>Sunshine Avenue</td><td>23909</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="left div_table_box">
+                <div class="div_any_child">
+                    <div class="div_any_title"><img src="/static/img/title_4.png">Adaptive Traffic Lights</div>
+                    <div class="table_p">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Intersection</th>
+                                    <th>Red Light Time (s)</th>
+                                    <th>Green Light Time (s)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Yonghe Road</td><td>10</td><td>44</td></tr>
+                                <tr><td>Nanhu Road</td><td>11</td><td>43</td></tr>
+                                <tr><td>Wangxi Road</td><td>13</td><td>35</td></tr>
+                                <tr><td>Fifth Avenue</td><td>14</td><td>32</td></tr>
+                                <tr><td>Sunshine Avenue</td><td>19</td><td>28</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="left div_table_box">
+                <div class="div_any_child">
+                    <div class="div_any_title"><img src="/static/img/title_4.png">Congestion Resolution Ranking</div>
+                    <div class="table_p">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Intersection</th>
+                                    <th>Duration (min)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>Nanhu Road</td><td>4</td></tr>
+                                <tr><td>2</td><td>Wangxi Road</td><td>6</td></tr>
+                                <tr><td>3</td><td>Fifth Avenue</td><td>8</td></tr>
+                                <tr><td>4</td><td>Yonghe Road</td><td>9</td></tr>
+                                <tr><td>5</td><td>Sunshine Avenue</td><td>10</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/jquery/jQuery-2.2.0.min.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <script src="/static/js/base.js"></script>
+    <script src="/static/js/index.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=5ieMMexWmzB9jivTq6oCRX9j&callback"></script>
+    <script src="/static/js/map.js"></script>
+</body>
+</html>

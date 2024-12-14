@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table 1</title>
+    <link rel="stylesheet" href="/static/js/bstable/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/js/bstable/css/bootstrap-table.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link href="/static/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css" />
+
+</head>
+<style>
+
+</style>
+<body>
+<!--Top-->
+<header class="header left">
+    <div class="left nav">
+        <ul>
+            <li><i class="nav_1"></i><a href="/index">Data Overview</a> </li>
+            <li><i class="nav_3"></i><a href="/map">Map View</a> </li>
+            <li><i class="nav_7"></i><a href="/static1">Query Statistics</a> </li>
+        </ul>
+    </div>
+    <div class="header_center left">
+{#        <h1><strong>Big Data Traffic Visualization Platform</strong></h1>#}
+    </div>
+    <div class="right nav text_right">
+            <ul>
+            <li><i class="nav_8"></i><a href="/message">Information Entry</a> </li>
+            <li><i class="nav_4"></i><a href="/admin">Backend Management</a> </li>
+            <li class="nav_active"><i class="nav_4"></i><a href="/loginsout">Logout</a> </li>
+        </ul>
+    </div>
+</header>
+<div class="clear"></div>
+<!--Content-->
+<div class="con1 left" id="car_control">
+
+    <div class="right " style="width: 100%;">
+        <div class="table_find">
+            <form>
+            <p><label>Name:</label>
+                <input type="text" name="name" placeholder="Please enter name">
+                <label>ID Number:</label>
+                <input type="text" placeholder="Please enter number" name="nameid">
+                <label>Select Type:</label>
+                <select name="type1">
+                    <option></option>
+                    <option>Violation Query</option>
+                    <option>Fine Payment</option>
+                    <option>Accident Quick Handle</option>
+                    <option>Accident Progress and Results</option>
+                </select>
+                <label>Keyword:</label>
+                <input type="text" placeholder="Please enter keyword"></p>
+                <p>
+                    <span>&nbsp;</span>
+                <button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span>Search</button>
+                <span class="more_find right" onclick="openList()" id="open">Advanced Search>></span></p>
+
+            <div class="find_expend">
+                <p>
+                    <label>Vehicle Type:</label>
+                    <select name="chetype">
+                        <option></option>
+                        <option>Truck</option>
+                        <option>Small Vehicle</option>
+                        <option>Large Vehicle</option>
+                        <option>Trailer</option>
+                        <option>Motorcycle</option></select>
+                    <label>Driver License Number:</label>
+                    <input type="text" placeholder="Please enter number" name="driversnumber">
+                    <label>License Plate:</label>
+                    <input type="text" placeholder="Please enter license plate" name="platenumber">
+                    <label>Truck Pass Code:</label>
+                    <input type="text" placeholder="Please enter code" name="Truckpass">
+                </p>
+                    <span class="more_find right" onclick="closeList()">Collapse>></span></p>
+            </div>
+            </form>
+        </div>
+        <div class="table_div">
+            <p class="table_but"><a href="javascript:void(0)" onclick="add()"><i class="glyphicon glyphicon-plus"></i>Add New</a><a onclick="tb2csv()" href="javascript:void(0)"><i class="glyphicon glyphicon-export"></i>Export</a> </p>
+            <p>
+            <table id="table" class="table_style" border="0">
+            </table>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script src="/static/js/jquery/jQuery-2.2.0.min.js"></script>
+<script src="/static/js/base.js"></script>
+<script src="/static/js/table1.js"></script>
+<script src="/static/js/ztree/jquery.ztree.all-3.5.js"></script>
+<script src="/static/js/listTree.js"></script>
+<script src="/static/js/bstable/js/bootstrap.min.js"></script>
+<script src="/static/js/bstable/js/bootstrap-table.js"></script>
+<script src="/static/js/bstable/js/bootstrap-table-zh-CN.min.js"></script>
+<script src="/static/js/layer_v2.1/layer/layer.js"></script>
+
+<script>
+    //Export to CSV
+    function tb2csv() {
+        var $trs = $("#table").find("tr");
+        var str = "";
+        for (var i = 0; i < $trs.length; i++) {
+            var $tds = $trs.eq(i).find("td,th");
+            for (var j = 0; j < $tds.length; j++) {
+                str += $tds.eq(j).text() + ",";
+            }
+            str += "\n";
+        }
+        var csv = "data:text/csv;charset=utf-8,\ufeff" + str;
+        var link = document.createElement("a");
+        link.setAttribute("href", csv);
+        link.setAttribute("download", new Date().getTime() + ".csv");
+        link.click();
+    }
+</script>
+
+</body>
+</html>

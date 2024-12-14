@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistical Analysis</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+</head>
+<body>
+<!--Top-->
+<header class="header left">
+    <div class="left nav">
+        <ul>
+            <li ><i class="nav_1"></i><a href="/index">Data Overview</a> </li>
+            <li><i class="nav_3"></i><a href="/map">Map View</a> </li>
+            <li class="nav_active"><i class="nav_7"></i><a href="/static1">Query Statistics</a> </li>
+        </ul>
+    </div>
+    <div class="right nav text_right">
+        <ul>
+            <li><i class="nav_8"></i><a href="/message">Information Entry</a> </li>
+            <li><i class="nav_4"></i><a href="/table1">Table View</a> </li>
+            <li><i class="nav_4"></i><a href="/admin">Backend Management</a> </li>
+            <li class="nav_active"><i class="nav_4"></i><a href="/loginsout">Logout</a> </li>
+        </ul>
+    </div>
+</header>
+<!--Content-->
+<div class="con left">
+    <!--Select Time-->
+    <div class="static_top left">
+        <i></i><span>Statistical Overview</span>
+    </div>
+    <!--Data Summary-->
+    <div class="stiatic_top_con left">
+<table>
+    <tr>
+        <td class="labe_td">Overview:</td>
+        <td colspan="3" class="sky">348,473 vehicles passed through this intersection today. Many traffic violations were detected. Driver education on traffic laws and regulations should be strengthened!</td>
+    </tr>
+    <tr>
+        <td class="labe_td">Small Cars:</td>
+        <td>33,987 units</td>
+        <td class="labe_td">Medium Cars:</td>
+        <td class="org">33,287 units</td>
+    </tr>
+    <tr>
+        <td class="labe_td">Non-motor Vehicles:</td>
+        <td class="red">49,876 units</td>
+        <td class="labe_td">Large Trucks:</td>
+        <td>520 units</td>
+    </tr>
+</table>
+    </div>
+    <!--Statistical Analysis Charts-->
+    <div class="static_top left">
+        <i></i><span>Statistical Analysis 1</span>
+    </div>
+    <div class="div_any">
+        <div class="left div_any03">
+            <div class="div_any_child01 left">
+                <div class="div_any_title"><img src="/static/img/title_1.png">Vehicle Type Statistics</div>
+                <p id="char1" class="p_chart"></p>
+                <div class="char_table"><div class="table_p table_p01">
+                    <table>
+                        <thead><tr>
+                            <th>Rank</th>
+                            <th>Vehicle Type</th>
+                            <th>Total Vehicles</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr><td>1</td><td>Small Cars:</td><td>4,679</td></tr>
+                        <tr><td>2</td><td>Medium Cars:</td><td>4,568</td></tr>
+                        <tr><td>3</td><td>Large Trucks:</td><td>3,257</td></tr>
+                        <tr><td>4</td><td>School Buses:</td><td>2,345</td></tr>
+                        </tbody>
+                    </table>
+                </div></div>
+            </div>
+            <div class="div_any_child01 left">
+                <div class="div_any_title"><img src="/static/img/title_2.png">Vehicle Status Statistics</div>
+                <p id="char2" class="p_chart"></p>
+                <div class="char_table"><div class="table_p table_p01">
+                    <table>
+                        <thead><tr>
+                            <th>Travel Rank</th>
+                            <th>Vehicle Type</th>
+                            <th>Total Count</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr><td>1</td><td>School Buses:</td><td>334</td></tr>
+                        <tr><td>2</td><td>Small Cars:</td><td>320</td></tr>
+                        <tr><td>3</td><td>Medium Cars:</td><td>302</td></tr>
+                        <tr><td>4</td><td>Large Trucks:</td><td>301</td></tr>
+                        </tbody>
+                    </table>
+                </div></div>
+            </div>
+        </div>
+
+        <div class="static_top left">
+            <i></i><span>Statistical Analysis 2</span>
+        </div>
+        <div class="right div_any03">
+            <div class="div_any_child01 left">
+                <div class="div_any_title"><img src="/static/img/title_4.png">Travel Speed Statistics</div>
+                <p id="char3" class="p_chart"></p>
+                <div class="char_table"><div class="table_p table_p01">
+                    <table>
+                        <thead><tr>
+                            <th>Rank</th>
+                            <th>Vehicle Type</th>
+                            <th>Avg Speed (km/h)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr><td>1</td><td>Medium Cars:</td><td>80</td></tr>
+                        <tr><td>2</td><td>Small Cars:</td><td>60</td></tr>
+                        <tr><td>3</td><td>Large Trucks:</td><td>40</td></tr>
+                        <tr><td>4</td><td>School Buses:</td><td>20</td></tr>
+                        </tbody>
+                    </table>
+                </div></div>
+            </div>
+            <div class="div_any_child01 left">
+                <div class="div_any_title"><img src="/static/img/title_5.png">Vehicle Alert Statistics</div>
+                <p id="char4" class="p_chart"></p>
+                <div class="char_table"><div class="table_p table_p01">
+                    <table>
+                        <thead><tr>
+                            <th>Rank</th>
+                            <th>Vehicle Type</th>
+                            <th>Count</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr><td>1</td><td>Small Cars:</td><td>2,900</td></tr>
+                        <tr><td>2</td><td>Medium Cars:</td><td>1,200</td></tr>
+                        <tr><td>3</td><td>Large Trucks:</td><td>300</td></tr>
+                        <tr><td>4</td><td>School Buses:</td><td>200</td></tr>
+                        </tbody>
+                    </table>
+                </div></div>
+            </div>
+        </div>
+</div>
+<script src="/static/js/jquery/jQuery-2.2.0.min.js"></script>
+<script src="/static/js/echarts-all.js"></script>
+<script src="/static/js/base.js"></script>
+<script src="/static/js/static.js"></script>
+</body>
+</html>
